@@ -25,19 +25,38 @@
 //   console.log(sortedArray); // prints [2, 3, 5, 6, 7, 9, 10, 11, 12, 14]
   
 
-function quickSort(array){
-  if(array.length<=1){
-    return array
+// function quickSort(array){
+//   if(array.length<=1){
+//     return array
+//   }
+//   const pivot = array[0]
+//   const less = []
+//   const greater = []
+
+//   for(let i=1;i<array.length;i++){
+//     if(array[i]<pivot){
+//         less.push(array[i])
+//     }else{
+//       greater.push(array[i])
+//     }
+//   }
+//   return quickSort(less).concat(pivot,quickSort(greater))
+// }
+
+function quickSort(arr){
+  if(arr.length<=1){
+    return arr
   }
-  const pivot = array[0]
+
+  const pivot = arr[0]
   const less = []
   const greater = []
 
-  for(let i=1;i<array.length;i++){
-    if(array[i]<pivot){
-        less.push(array[i])
+  for(let i=1;i<arr.length;i++){
+    if(arr[i]<pivot){
+      less.push(arr[i])
     }else{
-      greater.push(array[i])
+      greater.push(arr[i])
     }
   }
   return quickSort(less).concat(pivot,quickSort(greater))
